@@ -1,4 +1,4 @@
-import { Routes, Route, Navlink } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 
 import { Registro } from "../../Pages/Registro/Registro";
 import { Home } from "../../Pages/Home/Home";
@@ -6,11 +6,11 @@ import { Home } from "../../Pages/Home/Home";
 export function Router() {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <Navlink class="navbar-brand" to="/"></Navlink>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <NavLink className="navbar-brand" to="/">Mi App</NavLink>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -22,25 +22,25 @@ export function Router() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <Navlink class="nav-link" to="/">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
                   Features
-                </Navlink>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <Navlink class="nav-link" to="/">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/home">
                   Pricing
-                </Navlink>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">
+              <li className="nav-item">
+                <NavLink className="nav-link disabled" aria-disabled="true">
                   Disabled
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
