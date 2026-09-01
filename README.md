@@ -1,16 +1,56 @@
-# React + Vite
+# Proyecto de registro con React y Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Este proyecto es una versión mejorada de un formulario de registro, manteniendo tus variables principales como `nombre`, `correo`, `contrasena` y `rol`, y agregando la lógica que faltaba para que funcione como una aplicación real.
 
-Currently, two official plugins are available:
+## ¿Qué se agregó?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Validación de campos del formulario.
+- Manejo de estado con `useState`.
+- Confirmación de contraseña.
+- Checkbox de términos y condiciones.
+- Mensajes de error y éxito.
+- Navegación con `react-router-dom` entre `Registro` y `Home`.
+- Persistencia con `localStorage` para guardar la información del usuario registrado.
+- Vista de bienvenida con la información del usuario en la página de inicio.
 
-## React Compiler
+## ¿Para qué sirve?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sirve para registrar usuarios en una aplicación web con un flujo completo:
 
-## Expanding the Oxlint configuration
+1. El usuario llena sus datos.
+2. El sistema valida que la información sea correcta.
+3. Se guarda la información del usuario.
+4. Se navega a la vista principal para mostrar la información registrada.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Estructura principal
+
+- `src/assets/Components/Pages/Registro/Registro.jsx`: formulario de registro.
+- `src/assets/Components/Pages/Home/Home.jsx`: vista de bienvenida con datos del usuario.
+- `src/assets/Components/Router/Router.jsx`: rutas de navegación de la app.
+
+## Cómo ejecutar el proyecto
+
+```bash
+npm install
+npm run dev
+```
+
+## Variables principales usadas
+
+- `nombre`
+- `correo`
+- `contrasena`
+- `rol`
+
+Estas variables se mantienen y se usan en el formulario y en la vista final para mostrar el contenido registrado.
+
+## Resultado esperado
+
+La aplicación permite:
+
+- registrar un usuario,
+- validar campos,
+- confirmar contraseña,
+- mostrar errores si falta información,
+- guardar la información del usuario,
+- redirigir a la vista home con los datos del registro.

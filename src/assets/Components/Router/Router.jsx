@@ -1,14 +1,17 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { NavLink, Route, Routes } from 'react-router-dom';
 
-import { Registro } from "../../Pages/Registro/Registro";
-import { Home } from "../../Pages/Home/Home";
+import { Home } from '../Pages/Home/Home';
+import { Registro } from '../Pages/Registro/Registro';
 
 export function Router() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/">Mi App</NavLink>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container">
+          <NavLink className="navbar-brand fw-bold" to="/">
+            Mi App
+          </NavLink>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -18,28 +21,19 @@ export function Router() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  Features
+                <NavLink className="nav-link" to="/registro">
+                  Registro
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/home">
-                  Pricing
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link disabled" aria-disabled="true">
-                  Disabled
+                  Home
                 </NavLink>
               </li>
             </ul>
@@ -47,13 +41,13 @@ export function Router() {
         </div>
       </nav>
 
-      <section className="container p-5">
+      <main className="bg-light min-vh-100">
         <Routes>
           <Route path="/" element={<Registro />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/home" element={<Home />} />
         </Routes>
-      </section>
+      </main>
     </>
   );
 }
